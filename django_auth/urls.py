@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from accounts.views import index
 
+# ^ =carrot and $ dollar sign is to indicate the url will be empty
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index)
 ]

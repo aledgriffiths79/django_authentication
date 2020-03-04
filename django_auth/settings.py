@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [ ]
 
 # Application definition
 
+# we have some login functionality built into the application already through the django admin, so django admin requires a super user to be created in order to gain access to the admin panel by inputting into the terminal: python manage.py createsuperuser
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
