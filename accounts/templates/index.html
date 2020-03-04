@@ -11,5 +11,14 @@
         <li><a href='#'>Profile</a></li>
       </ul>
     </nav>
+    <hr>
+    <!-- below says: if django giving us some messages -->
+    {% if messages %}
+    <div>
+      {% for message in messages%}
+            {{ message }}
+      {% endfor %}
+    </div>
+    {% endif %}
   </body>
 </html>
