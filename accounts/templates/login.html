@@ -1,32 +1,18 @@
-<html>
-  <head>
-    <title>Django Auth</title>
-  </head>
-  <body>
-    <h1>User Login</h1>
-    <nav>
-      <ul>
-        <li><a href='{% url "login" %}'>Login</a></li>
-        <li><a href='{% url "logout" %}'>Logout</a></li>
-        <li><a href='#'>Register</a></li>
-        <li><a href='#'>Profile</a></li>
-      </ul>
-    </nav>
-    <hr>
-    <!-- pop in a Django message here which will display our message if user is successfully logged -->
-    {% if messages %}
-    <div>
-      {% for message in messages%}
-            {{ message }}
-      {% endfor %}
-    </div>
-    {% endif %}
 
-    <form action="" method="POST">
-      <!-- we use the % sign instead of curly braces as this is a reference to a function  -->
-      {% csrf_token %}
-      {{ login_form }}
-      <button type='submit'>Login</button>
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block page_title %}Login Page {% endblock %}
+
+{% block page_heading %}User Login{% endblock %}
+
+{% block content %}
+<form action="" method="POST">
+  <!-- we use the % sign instead of curly braces as this is a reference to a function  -->
+    {% csrf_token %}
+    {{ login_form }}
+    <button type='submit'>Login</button>
+</form>
+{% endblock %}
+
+
+
