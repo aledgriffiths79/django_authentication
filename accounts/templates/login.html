@@ -13,7 +13,7 @@
       </ul>
     </nav>
     <hr>
-    <!-- below says: if django giving us some messages -->
+    <!-- pop in a Django message here which will display our message if user is successfully logged -->
     {% if messages %}
     <div>
       {% for message in messages%}
@@ -23,7 +23,10 @@
     {% endif %}
 
     <form action="" method="POST">
+      <!-- we use the % sign instead of curly braces as this is a reference to a function  -->
+      {% csrf_token %}
       {{ login_form }}
+      <button type='submit'>Login</button>
     </form>
   </body>
 </html>
