@@ -7,6 +7,15 @@
 
 {% block content %}
 <p>If you already have an account, you can <a href = "{% url 'login' %}">sign in</a></p>
+
+<form action="" method="POST">
+  <!-- we use the % sign instead of curly braces as this is a reference to a function  -->
+    {% csrf_token %}
+    <!-- render it as a p element rather than a div i.e.registration_form.as_p -->
+    {{ registration_form.as_p }}
+    <button type='submit'>Register</button>
+</form>
+
 {% endblock %}
 
 
