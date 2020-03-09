@@ -12,7 +12,8 @@
             <li><a href='{% url "logout" %}'>Logout</a></li>
         {% else %}
             <li><a href='{% url "login" %}'>Login</a></li>
-            <li><a href='#'>Register</a></li>
+            <!-- update the url for our href on our register list item -->
+            <li><a href='{% url "registration" %}'>Register</a></li>
         {% endif %}
       </ul>
     </nav>

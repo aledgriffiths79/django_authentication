@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from accounts.views import index, logout, login
+from accounts.views import index, logout, login, registration
 
 # ^ =carrot and $ dollar sign is to indicate the url will be empty
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
     url(r'^accounts/logout/$', logout, name='logout'),
-    url(r'^accounts/login/$', login, name='login')
+    url(r'^accounts/login/$', login, name='login'),
+    # we will pass through the registration view and we will give the view a name of registration
+    url(r'^accounts/register/$', registration, name='registration')
 ]

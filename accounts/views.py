@@ -44,3 +44,11 @@ def login(request):
 
   # create an instance of the loginform
   return render(request, 'login.html', {'login_form': login_form})
+
+# implementing a registration functonality
+# (request) is a object and parameter i think
+
+def registration(request):
+  """Render the registration page"""
+  return render(request, 'registration.html')
+
