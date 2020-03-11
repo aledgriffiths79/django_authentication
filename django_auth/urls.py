@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from accounts.views import index, logout, login, registration
+from accounts.views import index, logout, login, registration, user_profile
 
 # ^ =carrot and $ dollar sign is to indicate the url will be empty
 urlpatterns = [
@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^accounts/logout/$', logout, name='logout'),
     url(r'^accounts/login/$', login, name='login'),
     # we will pass through the registration view and we will give the view a name of registration
-    url(r'^accounts/register/$', registration, name='registration')
+    url(r'^accounts/register/$', registration, name='registration'),
+    # user_profile underneath connects to the view function def user_profile and must include it above from accounts.view import user_profile
+    url(r'^accounts/profile/$', user_profile, name='profile')
 ]
