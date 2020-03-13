@@ -1,3 +1,5 @@
+# What is the name that we typically give to a file that contains our custom authentication code? backends.py
+
 from django.contrib.auth.models import User
 
 class EmailAuth:
