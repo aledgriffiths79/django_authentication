@@ -126,5 +126,14 @@ STATIC_URL = '/static/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
+# https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/courseware/c237a0c4183442698c6602454dbf011a/e1fdf572eb7e46a59d7abf825bb3511f/?child=first is the address to where blow syntax originated from
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Send an email functionality
+# TLS if a form of email
+EMAIL_USE_TLS = True
+# smtp: protocol that is used to send emails
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_ADDRESS')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
