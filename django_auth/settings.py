@@ -104,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Django by default only supports logging in using a username.  In order to facilitate an email login we need to build what was called a custom authentication back-end Authentication back-end is what django uses to authenticate users so we could create authentication backends
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth'
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -129,8 +136,11 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/courseware/c237a0c4183442698c6602454dbf011a/e1fdf572eb7e46a59d7abf825bb3511f/?child=first is the address to where blow syntax originated from
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/courseware/c237a0c4183442698c6602454dbf011a/e1fdf572eb7e46a59d7abf825bb3511f/?child=last
+# the you tube address above is the link to the configuration to the email client and our application to send emails, This is due to http rather than https being used. However "As of 25th November, 2019 there is an issue with Gmail sending emails from Django when running locally. So cant fix this issue at the moment, but it will work in production (Heroku). The below configuration is for gmail specific not hotmail etc as its not covered in the code institute course
+
 # Send an email functionality
-# TLS if a form of email
+# TLS is a form of email
 EMAIL_USE_TLS = True
 # smtp: protocol that is used to send emails
 EMAIL_HOST = 'smtp.gmail.com'
