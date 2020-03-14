@@ -1,6 +1,9 @@
 
 {% extends 'base.html' %}
 
+<!-- load bootstrap_tags will enable us to basically import the bootstrap tags  -->
+{% load bootstrap_tags %}
+
 {% block page_title %}Registration Page {% endblock %}
 
 {% block page_heading %}User Registration{% endblock %}
@@ -12,8 +15,11 @@
   <!-- we use the % sign instead of curly braces as this is a reference to a function  -->
     {% csrf_token %}
     <!-- render it as a p element rather than a div i.e.registration_form.as_p -->
-    {{ registration_form.as_p }}
-    <button type='submit'>Register</button>
+    <!-- {{ registration_form.as_p }} -->
+    
+    <!-- instead of .as_p what we want to say is | as_bootstrap so this will take the form and pass it into the as _bootstrap function which will basically give it all that nice bootstrap look and feel  -->
+    {{ registration_form | as_bootstrap }}
+    <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
 {% endblock %}
