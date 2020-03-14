@@ -1,4 +1,8 @@
 <!-- main structure for pages across the site -->
+
+<!-- a template tag that says load staticfiles and this basically tells django that we first of all need to load the staticfiles which will allow us to use the static URL which will then tell us to tell django where our static directory lives -->
+{% load staticfiles %}
+
 <html>
   <head>
     <title>{% block page_title %}{% endblock %}</title>
@@ -8,6 +12,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
